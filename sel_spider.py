@@ -1,3 +1,4 @@
+# 简单selenium使用
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 driver = webdriver.PhantomJS()
