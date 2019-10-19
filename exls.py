@@ -10,7 +10,7 @@ def rd_wt_one_table(table,sheet_name,file_name):
     for row in range(nrows):
         for col in range(ncols):
             worksheet.write(row,col,table.cell(row,col).value)
-    gat_workbook.save(file_name)
+    workbook.save(file_name)
     print(file_name+'写入成功')
 
 #双表格读写
@@ -22,8 +22,8 @@ def rd_wt_two_table(header_table,body_table,header_sheet_name,body_sheet_name,fi
     body_ncols = body_table.ncols
 
     workbook = xlwt.Workbook(encoding = 'utf-8')
-    header_worksheet = order_workbook.add_sheet('header_sheet_name')
-    body_worksheet = order_workbook.add_sheet('body_sheet_name')
+    header_worksheet = workbook.add_sheet('header_sheet_name')
+    body_worksheet = workbook.add_sheet('body_sheet_name')
 
     # 订单表头读写
     for row in range(header_nrows):
@@ -42,7 +42,7 @@ def rd_wt_two_table(header_table,body_table,header_sheet_name,body_sheet_name,fi
 
 if __name__ == '__main__':
     # 打开数据表
-    data = xlrd.open_workbook('出口总模板.xlsx')
+    data = xlrd.open_workbook('出口总模板精简6.xlsx')
     # 读取收款单
     gathering_table = data.sheet_by_name('收款单')
     # 读取出口运单
