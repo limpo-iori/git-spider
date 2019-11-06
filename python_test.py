@@ -41,3 +41,7 @@ for i in range(10):
 	red_ball_list.sort()
 	bull_ball_list.sort()
 	print(red_ball_list,bull_ball_list)
+
+
+import progress_bar
+progress_bar.progress_bar(10000)
